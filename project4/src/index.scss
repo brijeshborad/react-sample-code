@@ -1,0 +1,12 @@
+@import "scss/variables";
+
+body {
+  background-color: $body-bg;
+  color: $main-color;
+  font-style: normal;
+  font-size: 15px;
+}
+
+small {
+  font-size: 13px;
+}

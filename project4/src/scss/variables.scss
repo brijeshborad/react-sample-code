@@ -1,0 +1,81 @@
+/*Bg and Colors*/
+$body-bg: #F3F2F7;
+$bg-white: rgba(255, 255, 255, 1);
+$header-bg: linear-gradient(92.94deg, #407FDB 0%, #2E66BD 100%);
+$orange : #ff4958;
+$white: rgba(255, 255, 255, 1);
+$main-color: #3d3d3d;
+$black: #444;
+$title-color : #3d3d3d;
+$green : #08B681;
+$light-orange : #FF7547;
+$red : #F44A69;
+$blue : #3A78F2;
+/*Bg and Colors*/
+
+
+/*Font Size*/
+$body-font-size : 18px;
+$header-size : 16px;
+$orange-btnsize : 15px;
+$green-btnsize : 13px;
+$banner-font: 70px;
+$title-size : 35px;
+/*Font Size*/
+
+/*Container Size*/
+$container : 1200px;
+$container-small : 1260px;
+/*Container Size*/
+
+/*Card*/
+$card-br : 8px;
+$card-boxshadow : 0 0 14px 5px rgba(211, 211, 211, 0.25), 0 0 10px 2px rgba(214, 214, 214, 0.22);
+/*Card*/
+
+
+/*Fonts*/
+$body-font: Roboto-Regular;
+$font-bold : Roboto-Bold;
+/*Fonts*/
+
+
+/*Extra*/
+$br-8: 8px;
+$title-letterspacing : 0.5px;
+$body-lettrspacing : 0.5px;
+
+
+/*Fonts*/
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('/fonts/Roboto-Regular/Roboto-Regular.eot');
+  src: local('☺'),
+  url('/fonts/Roboto-Regular/Roboto-Regular.woff') format('woff'),
+  url('/fonts/Roboto-Regular/Roboto-Regular.ttf') format('truetype'),
+  url('/fonts/Roboto-Regular/Roboto-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('/fonts/Roboto-Bold/Roboto-Bold.eot');
+  src: local('☺'),
+  url('/fonts/Roboto-Bold/Roboto-Bold.woff') format('woff'),
+  url('/fonts/Roboto-Bold/Roboto-Bold.ttf') format('truetype'),
+  url('/fonts/Roboto-Bold/Roboto-Bold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Fonts*/
+
+/*Media Queries*/
+$laptop-md: "screen and (max-width : 1600px)";
+$laptop: "screen and (max-width : 1366px)";
+$laptop-sm: "screen and (max-width : 1199px)";
+$mobile-lg : "screen and (max-width : 991px)";
+$mobile-md : "screen and (max-width : 767px)";
+$mobile : "screen and (max-width : 479px)";
+$mobile-sm : "screen and (max-width : 320px)";
+/*Media Queries*/

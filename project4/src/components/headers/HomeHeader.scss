@@ -1,0 +1,62 @@
+@import "./src/scss/variables";
+
+.landing-header {
+  position: absolute;
+  background: transparent;
+  z-index: 1;
+  width: 100%;
+  .row {
+    max-width: 1650px;
+    margin: 0 auto;
+    @media #{$laptop-md} {
+      max-width: 1430px;
+    }
+    @media #{$laptop} {
+      max-width: 1220px;
+    }
+  }
+  nav {
+    &.navbar {
+      padding: 0.5rem 0;
+      .navbar-nav {
+        margin-right: 7%;
+        @media #{$laptop-md} {
+          margin-right: 5%;
+        }
+        li {
+          margin-right: 20px;
+          a {
+            text-transform: uppercase;
+            color: $white;
+            font-size: $header-size;
+            border-bottom: 2px solid transparent;
+            padding: 28px 10px;
+            @media #{$laptop-md} {
+              font-size: $header-size - 3px;
+            }
+            &:hover {
+
+            }
+          }
+          &.active {
+            a {
+              font-family: $font-bold;
+            }
+          }
+        }
+      }
+      .sign-in-btn {
+        a {
+          font-size: $header-size;
+          white-space: nowrap;
+          @media #{$laptop-md} {
+            font-size: $header-size - 3px;
+          }
+        }
+      }
+      .collapse {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

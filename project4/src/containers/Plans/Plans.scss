@@ -1,0 +1,182 @@
+@import "src/scss/variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+.main-wrapper {
+  font-family: $body-font;
+  letter-spacing: $body-lettrspacing;
+  .container {
+    max-width: 1200px;
+  }
+  h1 {
+    margin: 40px 0 30px;
+    font-family: $font-bold;
+    font-size: 36px;
+    line-height: 48px;
+    color: $black;
+    @media #{$mobile-lg} {
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+  .price-plan {
+    .price-plan-col {
+      @media #{$mobile-lg} {
+        margin-bottom: 30px;
+      }
+      &.active, &:hover {
+        .price-plan-box {
+          &.orange {
+            box-shadow: 0 0 10px 3px #F967548c;
+          }
+
+          &.green {
+            box-shadow: 0 0 10px 3px #277E468c;
+          }
+
+          &.blue {
+            box-shadow: 0 0 10px 3px #4284AE8c;
+          }
+        }
+      }
+      &.active {
+        .price-plan-box {
+          border-width: 2px;
+        }
+      }
+      .price-plan-box {
+        border: 1px solid;
+        border-radius: $br-8;
+        background-color: $white;
+        padding: 40px 20px;
+        height: 100%;
+        transition: 0.3s all ease-in-out;
+        @media #{$mobile-lg} {
+          padding: 20px;
+        }
+        &.orange {
+          border-color: #F96754;
+        }
+        &.green {
+          border-color: #277E46;
+        }
+        &.blue {
+          border-color: #4284AE;
+        }
+        .btn-price {
+          align-items: center;
+          justify-content: space-between;
+          .btn {
+            border-radius: $br-8;
+            font-family: $font-bold;
+            font-size: 14px;
+            line-height: 20px;
+            color: $white;
+            min-width: auto;
+            padding: 7px 27px;
+            &.orange-btn {
+              background: #F96754;
+              &:before {
+                display: none;
+              }
+            }
+            &.green-btn {
+              background: #277E46;
+            }
+            &.blue-btn {
+              background: #2E66BD;
+            }
+          }
+          h6 {
+            font-family: $font-bold;
+            font-size: 15px;
+            line-height: 16px;
+            color: #01284F;
+          }
+        }
+        p {
+          font-size: 15px;
+          line-height: 22px;
+          color: #8A8C8F;
+          margin: 20px 0;
+        }
+        h4 {
+          color: #4284AE;
+          font-family: $font-bold;
+          font-size: 20px;
+          line-height: 20px;
+          margin: 20px 0;
+        }
+        ul {
+          li {
+            font-family: $font-bold;
+            font-size: 14px;
+            line-height: 20px;
+            color: #6F6060;
+            list-style-image: url('/images/green-tick.svg');
+            padding: 0 15px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+  .footer-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 78px;
+    @media #{$mobile-lg} {
+      align-items: center;
+      margin-top: 0;
+    }
+    @media #{$mobile-md} {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cancel-btn {
+      display: flex;
+      text-align: left;
+      background: #25D366;
+      border-radius: $br-8;
+      color: $white;
+      align-items: center;
+      padding: 8px 30px;
+      @media #{$mobile-lg} {
+        max-width: 500px;
+      }
+      h5 {
+        margin-bottom: 0;
+        font-family: $font-bold;
+        font-size: 23px;
+        line-height: 28px;
+        margin-left: 30px;
+        @media #{$mobile-lg} {
+          font-size: 18px;
+          line-height: 22px;
+        }
+        span {
+          font-size: 16px;
+          line-height: 22px;
+          @media #{$mobile-lg} {
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .signup-btn {
+      background: #407FDB;
+      border-radius: $br-8;
+      font-family: $font-bold;
+      font-size: 24px;
+      line-height: 33px;
+      color: $white;
+      padding: 8px 50px;
+      @media #{$mobile-lg} {
+        font-size: 18px;
+        line-height: 28px;
+        @media #{$mobile-md} {
+          margin: 30px auto;
+        }
+      }
+    }
+  }
+}

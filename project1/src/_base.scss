@@ -1,0 +1,281 @@
+@import "src/variables";
+
+$spaceamounts: (5, 8, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+  .my-#{$space} {
+    margin-top: #{$space}px !important;
+    margin-bottom: #{$space}px !important;
+  }
+  .mx-#{$space} {
+    margin-left: #{$space}px !important;
+    margin-right: #{$space}px !important;
+  }
+  .py-#{$space} {
+    padding-top: #{$space}px !important;
+    padding-bottom: #{$space}px !important;
+  }
+  .px-#{$space} {
+    padding-left: #{$space}px !important;
+    padding-right: #{$space}px !important;
+  }
+}
+
+h1 {
+  @include font-common(40px, 50px);
+  font-weight: 600;
+  margin-bottom: 0;
+  //font-family: $font-family_semi_bold;
+}
+
+h2 {
+  @include font-common(36px, 46px);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h3 {
+  @include font-common(32px, 42px);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+h4 {
+  @include font-common(28px, 38px);
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+h5 {
+  @include font-common(24px, 34px);
+  font-weight: 200;
+  margin-bottom: 0;
+  //font-family: $font-family_semi_bold;
+}
+
+.text-pink {
+  color: $heading-text-color !important;
+}
+
+.error {
+  border: 1px solid $error-color !important;
+}
+
+.noresize {
+  resize: none;
+}
+
+.error-text {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  text-align: left !important;
+  color: $error-color !important;
+}
+
+a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  @include font-common(16px, 20px);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+}
+
+.mainadmin-section {
+  display: flex;
+  .button-row {
+    button:focus, button:active {
+      background-color: $primary-color!important;
+      border-color:  $primary-color!important;
+    }
+  }
+}
+
+.sidebarnav-section.active + .admin-content {
+  width: 86%;
+}
+
+.admin-content {
+  padding-left: 0;
+  padding-top: 20px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9;
+
+  .admin-btn {
+    background-color: $primary-color;
+    color: #ffffff;
+    border-color: $primary-color;
+    @include desktop-prim-small();
+  }
+
+  .form-control::placeholder {
+    @include desktop-prim-small();
+    @include Avenir-Book-font();
+    color: $textlight-text;
+  }
+
+  .form-control {
+    color: #656565;
+    @include desktop-prim-small();
+    height: 35px;
+    border-color: $input-border-color;
+  }
+
+  .userlist-table {
+    .table-responsive {
+      .table {
+        .table-search {
+          max-width: 210px;
+          display: block;
+        }
+
+        tr {
+          .button-row {
+            .admin-btn {
+              height: 37px;
+            }
+          }
+        }
+
+        tr:nth-child(2n) {
+          //background-color: #f2f2f2;
+        }
+
+        tr {
+          div {
+            position: relative;
+
+            input {
+              @include Avenir-Medium-font();
+              font-size: 14px !important;
+            }
+
+            input.form-control::placeholder {
+              line-height: 24px;
+            }
+
+            input[type="checkbox"] {
+              opacity: 0;
+              height: 18px !important;
+              z-index: 9;
+              position: relative;
+              width: 18px;
+            }
+
+            input:checked + label:before {
+              content: "\f14a";
+              color: $primary-color;
+            }
+
+            label:before {
+              content: "\f096";
+              font-family: FontAwesome;
+              color: #777777;
+              font-size: 18px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          th.-sort-asc {
+            color: $primary-color;
+            box-shadow: none;
+          }
+
+          th {
+            @include Avenir-Heavy-font();
+            font-weight: normal;
+            vertical-align: middle;
+          }
+        }
+
+        tr {
+          td {
+            @include desktop-prim-small();
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin-toggle-btn {
+  position: absolute;
+  top: -45px;
+  left: 170px;
+  border: none;
+  padding: 0;
+}
+
+img.back-img {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .user-list-section {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .admin-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .sidebarnav-section.active + .admin-content {
+    width: 100%;
+  }
+
+  .admin-content {
+    padding-top: 5px;
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+  }
+  .sidebarnav-section + .admin-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: block;
+    top: 0;
+  }
+  .sidebarnav-section.active + .admin-content::before {
+    display: none;
+  }
+}
+

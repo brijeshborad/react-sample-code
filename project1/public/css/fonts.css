@@ -1,0 +1,12 @@
+
+/* Avenir-Medium */
+@font-face {
+    font-family: 'Avenir-Medium';
+    src: url('../fonts/Avenir-Medium/Avenir-Medium.eot');
+    src: url('../fonts/Avenir-Medium/Avenir-Medium.eot') format('embedded-opentype'),
+    url('../fonts/Avenir-Medium/Avenir-Medium.woff') format('woff'),
+    url('../fonts/Avenir-Medium/Avenir-Medium.ttf') format('truetype'),
+    url('../fonts/Avenir-Medium/Avenir-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal
+}

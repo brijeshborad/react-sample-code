@@ -1,0 +1,251 @@
+$primary-color: #ff007d;
+$heading-text-color: $primary-color;
+$button-primary: $primary-color;
+$button-secondary: #E0E0E0;
+$select-option-color: #DB1971;
+$footer-color: #5A503C;
+//$error-color: #DE1D24;
+$error-color: #ff0000;
+
+$primary-text: #212121;
+$secondary-text: #656565;
+$disabled-text: #b1b1b1;
+$textlight-text : #9d9d9d;
+$success-text : #2B8702;
+$input-border-color : #D6D6D6;
+$dark-border-color : rgba(0,0,0,0.38);
+
+@mixin Avenir-Medium-font() {
+  font-family: 'Avenir-Medium';
+}
+@mixin Avenir-MediumOblique-font() {
+  font-family: 'Avenir-MediumOblique';
+}
+@mixin Avenir-Book-font() {
+  font-family: 'Avenir-Book';
+}
+@mixin Avenir-BookOblique-font() {
+  font-family: 'Avenir-BookOblique';
+}
+@mixin Avenir-Heavy-font() {
+  font-family: 'Avenir-Heavy';
+}
+
+@mixin font-common($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin common-button-css($border-radius, $color: #ffffff) {
+  @include font-common(16px, 20px);
+  background: $button-primary;
+  color: $color;
+  //font-family: $font-family_bold;
+  font-weight: bold;
+  border-radius: $border-radius !important;
+}
+
+@mixin add-opacity($value) {
+  opacity: $value;
+}
+
+/* New Comman Fontsize, Color and weight CSs */
+
+
+
+/* Desktop Screen Css */
+
+@mixin desktop-light-btn() {
+  background-color: #C6C6C8;
+  color: #ffffff;
+  border-color: #C6C6C8;
+  padding: 10px;
+  font-size: 16px;
+}
+
+@mixin desktop-line-btn() {
+  padding: 7px 40px;
+  color: $primary-text;
+  font-size: 14px;
+  line-height: 16px;
+  border: 1px solid $dark-border-color;
+  background-color: #ffffff;
+}
+
+@mixin desktop-sec-text() {
+  font-size: 14px;
+  color: $secondary-text;
+  line-height: 16px;
+}
+
+@mixin desktop-prim-small() {
+  font-size: 14px;
+}
+@mixin desktop-prim-medium() {
+  font-size: 16px;
+}
+
+@mixin desktop-heding() {
+  font-size: 20px;
+  color: $primary-color;
+  font-weight: 600;
+}
+
+
+@mixin desktop-card-title() {
+  font-size: 18px;
+  color: $primary-text;
+}
+
+@mixin desktop-displayname() {
+  font-size: 20px;
+  color: $primary-text;
+}
+
+@mixin desktop-primary-text() {
+  font-size: 16px;
+  color: $primary-text;
+}
+@mixin desktop-secondary-text() {
+  font-size: 16px;
+  color: $secondary-text;
+}
+
+@mixin desktop-tertiary-text() {
+  font-size: 16px;
+  color: $secondary-text;
+}
+
+@mixin desktop-tertiary-text-italy() {
+  font-size: 16px;
+  color: $secondary-text;
+}
+
+@mixin desktop-form-field() {
+  font-size: 16px;
+  color: $textlight-text;
+}
+
+@mixin desktop-time-date() {
+  font-size: 14px;
+  color: $secondary-text;
+}
+
+@mixin desktop-numbers() {
+  font-size: 26px;
+  color: $primary-color;
+}
+
+@mixin desktop-pink-title-number() {
+  font-size: 18px;
+  color: $primary-color;
+}
+
+@mixin desktop-pink-body-text() {
+  font-size: 16px;
+  color: $primary-color;
+}
+
+@mixin desktop-pinl-tags() {
+  font-size: 16px;
+  color: $primary-color;
+}
+
+@mixin desktop-home-heading() {
+  font-size: 40px;
+}
+@mixin desktop-pink-primary() {
+  font-size: 14px;
+}
+@mixin desktop-pink-faq() {
+  font-size: 24px;
+  font-weight: 600;
+}
+@mixin desktop-black-faq() {
+  font-size: 24px;
+  font-weight: 600;
+}
+/* Mobile Screen Css */
+@mixin mobile-card-title() {
+  font-size: 16px;
+  color: $primary-text;
+}
+
+@mixin mobile-displayname() {
+  font-size: 18px;
+  color: $primary-text;
+}
+
+@mixin mobile-primary-text() {
+  font-size: 14px;
+  color: $primary-text;
+}
+@mixin mobile-secondary-text() {
+  font-size: 14px;
+  color: $secondary-text;
+}
+
+@mixin mobile-tertiary-text() {
+  font-size: 14px;
+  color: $secondary-text;
+}
+
+@mixin mobile-tertiary-text-italy() {
+  font-size: 14px;
+  color: $secondary-text;
+}
+
+@mixin mobile-form-field() {
+  font-size: 14px;
+  color: $textlight-text;
+}
+
+@mixin mobile-time-date() {
+  font-size: 12px;
+  color: $secondary-text;
+}
+
+@mixin mobile-numbers() {
+  font-size: 24px;
+  color: $primary-color;
+}
+
+@mixin mobile-pink-title-number() {
+  font-size: 16px;
+  color: $primary-color;
+}
+
+@mixin mobile-pink-body-text() {
+  font-size: 14px;
+  color: $primary-color;
+}
+
+@mixin mobile-pinl-tags() {
+  font-size: 14px;
+  color: $primary-color;
+}
+@mixin mobile-heding() {
+  font-size: 20px;
+}
+
+@mixin mobile-pink-primary() {
+  font-size: 14px;
+  color: $primary-color;
+}
+
+@mixin mobile-home-heading() {
+  font-size: 28px;
+}
+
+@mixin mobile-pink-faq() {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@mixin mobile-primary {
+  font-size: 14px;
+}
+
+@mixin mobile-primary-small {
+  font-size: 12px;
+}

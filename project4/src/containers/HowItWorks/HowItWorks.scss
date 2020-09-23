@@ -1,0 +1,98 @@
+@import "src/scss/variables";
+
+.main-wrapper {
+  font-family: $body-font;
+  letter-spacing: $body-lettrspacing;
+  .btn { border-radius: $br-8; }
+  .container {
+    max-width: 1200px;
+  }
+  h1 {
+    color: #4A4545;
+    font-family: $font-bold;
+    font-size: 36px;
+    line-height: 40px;
+    margin: 40px 0 60px;
+  }
+  .btn-tab {
+    .btn-blue {
+      background: $white;
+      color: $black;
+
+      border: 1px solid #407FDB;
+
+      font-size: 20px;
+      line-height: 25px;
+      font-family: $font-bold;
+      padding: 10px 20px;
+      min-width: 150px;
+      &.active {
+        background: #407FDB;
+        color: $white;
+      }
+    }
+  }
+  .services {
+    margin-top: 50px;
+    h2 {
+      text-transform: uppercase;
+      color: #4A4545;
+      font-family: $font-bold;
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 32px;
+    }
+    .services-box {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      counter-reset: section;
+      [class*="col-"] {
+        &:before {
+          position: absolute;
+          counter-increment: section;
+          content: counter(section);
+          font-size: 12px;
+          text-align: center;
+          color: $white;
+          background: #8A8C8F;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          right: 25px;
+          top: 5px;
+        }
+        .services-box-wrapper {
+          background: $white;
+          border-radius: $br-8;
+          padding: 20px;
+          height: 100%;
+          text-align: center;
+          .icon-title {
+            h5 {
+              font-family: $font-bold;
+              font-size: 18px;
+              line-height: 28px;
+              color: $black;
+              margin: 10px 0;
+            }
+          }
+          h6 {
+            font-family: $font-bold;
+            font-size: 14px;
+            line-height: 16px;
+            color: rgba(0, 0, 0, 0.56);
+            margin: 8px 0;
+          }
+          p {
+            font-family: $font-bold;
+            font-size: 11px;
+            line-height: 15px;
+            color: $black;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

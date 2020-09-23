@@ -1,0 +1,673 @@
+@import "src/scss/variables";
+
+body {
+  color: $main-color;
+  font-size: $body-font-size;
+  font-family: $body-font;
+  letter-spacing: $body-lettrspacing;
+  &.home-page {
+    background-color: $white;
+  }
+}
+
+%orange-btn {
+  background-color: $orange;
+  color: $white;
+  text-transform: uppercase;
+  font-size: $orange-btnsize;
+  padding: 18px 30px 18px 15px;
+  position: relative;
+  min-width: 160px;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-top: 2px solid $white;
+    border-left: 2px solid $white;
+    transition: all 250ms ease-in-out;
+    transform: rotate(135deg);
+    right: 20px;
+    top: 22px;
+  }
+
+  &.small {
+    font-size: 13px;
+    padding: 5px 20px;
+    min-width: auto;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $white;
+    background-color: #f23a4a;
+  }
+}
+
+.orange-btn {
+  @extend %orange-btn;
+}
+
+.title {
+  font-size: $title-size;
+  color: $title-color;
+  font-family: $font-bold;
+  letter-spacing: $title-letterspacing;
+  @media #{$laptop-md} {
+    font-size: $title-size - 5;
+  }
+}
+
+h2 {
+  &.particle {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: #ffecee;
+      width: 50px;
+      height: 50px;
+      top: -60px;
+      border-radius: $br-8;
+    }
+  }
+}
+
+.container {
+  max-width: $container;
+}
+
+.card {
+  border-radius: $card-br;
+  border: 0 none;
+  box-shadow: $card-boxshadow;
+}
+
+.home-banner {
+  background: url("/images/banner-blue-bg.png") no-repeat top left;
+  background-size: 87.5vw auto;
+  padding-top: 175px;
+  position: relative;
+  @media #{$laptop-md} {
+    background-size: 89vw auto;
+  }
+  @media #{$laptop} {
+    padding-top: 135px;
+  }
+  @media #{$mobile} {
+    padding-top: 70px;
+    background-color: #4881db;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    background: url("/images/map-bg.png") no-repeat right top;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+  }
+
+  .banner {
+    max-width: $container-small;
+    margin: 0 auto; // text includes 15px as well so reduced 15px here
+    @media #{$laptop-md} {
+      max-width: $container-small - 120px;
+    }
+
+    .banner-text {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding-top: 60px;
+      color: $white;
+      @media #{$mobile} {
+        padding-top: 0;
+      }
+
+      .banner-heading {
+        font-size: $banner-font;
+        font-family: $font-bold;
+        line-height: 76px;
+        margin-bottom: 20px;
+        @media #{$laptop-md} {
+          font-size: $banner-font - 20px;
+          line-height: ($banner-font - 20px) + 5px;
+        }
+        @media #{$laptop} {
+          font-size: $banner-font - 20px;
+          line-height: ($banner-font - 20px) + 5px;
+        }
+        @media #{$mobile} {
+          font-size: $banner-font - 45px;
+          line-height: ($banner-font - 45px) + 5px;
+        }
+      }
+
+      p {
+        padding-right: 100px;
+        @media #{$mobile} {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .banner-image {
+      @media #{$laptop-md} {
+        text-align: left !important;
+      }
+      @media #{$laptop} {
+        padding-left: 0;
+      }
+
+      > div {
+        @media #{$laptop-md} {
+          width: 360px;
+        }
+        @media #{$laptop} {
+          width: 300px;
+        }
+
+        img {
+          @media #{$laptop-md} {
+            max-width: 100%;
+            width: auto;
+          }
+        }
+      }
+
+      h5 {
+        font-size: 27px;
+        margin-top: 30px;
+        text-align: center;
+        font-family: $font-bold;
+        @media #{$laptop-md} {
+          text-align: left;
+          padding-left: 10%;
+        }
+        @media #{$laptop} {
+          padding-left: 0;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .core-services {
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      background: url("/images/star-particle.png") no-repeat left bottom;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      @media #{$mobile} {
+        display: none;
+      }
+    }
+
+    &:after {
+      background: url("/images/star-particle.png") no-repeat right top;
+      top: 0;
+    }
+
+    .row {
+      max-width: $container-small + 50px;
+      margin: 0 auto;
+
+      @media #{$laptop-md} {
+        max-width: $container-small - 70px;
+      }
+    }
+
+    .col-lg-6 {
+      padding: 0;
+      flex: 0 0 53%;
+      max-width: 53%;
+      @media #{$mobile} {
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .services-card {
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+
+      @media #{$mobile} {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        padding: 50px 30px;
+        text-align: center;
+        width: 325px;
+        @media #{$laptop-md} {
+          width: 290px;
+          padding: 40px 25px;
+        }
+        @media #{$laptop} {
+          width: 270px;
+        }
+        @media #{$mobile} {
+          width: 100%;
+        }
+
+        &.card-1 {
+          margin-right: 50px;
+          @media #{$laptop-md} {
+            margin-right: 40px;
+          }
+          @media #{$mobile} {
+            margin-bottom: 40px;
+          }
+        }
+
+        h3 {
+          font-size: 26px;
+          font-family: $font-bold;
+          padding: 0 10px;
+          margin-bottom: 0;
+          @media #{$laptop-md} {
+            font-size: 24px;
+          }
+          @media #{$laptop} {
+            font-size: 22px;
+          }
+        }
+
+        img {
+          width: auto;
+          max-width: 195px;
+          margin: 0 auto 20px;
+          @media #{$laptop-md} {
+            max-width: 165px;
+          }
+          @media #{$laptop} {
+            max-width: 150px;
+          }
+        }
+
+        &.card-2 {
+          margin-bottom: 50px;
+          @media #{$laptop-md} {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+
+    .service-text {
+      display: flex;
+      height: 100%;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: #3d3d3d;
+      padding-left: 45px;
+      @media #{$laptop-md} {
+        padding-left: 35px;
+      }
+      @media #{$laptop} {
+        padding-left: 0;
+      }
+      //@media #{$mobile} {
+      //  padding-left: 0;
+      //}
+
+      p {
+        color: #646464;
+      }
+
+      .btn {
+        margin-top: 100px;
+        max-width: 220px;
+        padding: 18px 28px;
+        @media #{$laptop-md} {
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+
+  .perfect-home {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: url("/images/house.png") no-repeat right top;
+      background-size: 460px auto;
+      width: 460px;
+      height: 270px;
+      right: 50px;
+      top: -100px;
+      @media #{$laptop} {
+        background-size: 380px auto;
+        width: 380px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background: url("/images/drop-bg.png") no-repeat left top;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      left: -15px;
+      top: -150px;
+      z-index: -1;
+    }
+
+    .row {
+      max-width: $container-small - 20px;
+      margin: 0 auto;
+      padding-top: 150px;
+      @media #{$laptop-md} {
+        padding-top: 100px;
+        max-width: $container-small - 120px;
+      }
+    }
+  }
+
+  .form-tab {
+    h2 {
+      margin-bottom: 70px;
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        background-color: #ffecee;
+        width: 50px;
+        height: 50px;
+        top: -60px;
+        border-radius: $br-8;
+      }
+    }
+
+    .tab-content {
+      padding: 0 50px 40px;
+      position: relative;
+      z-index: 1;
+
+      nav {
+        .nav-tabs {
+          border-bottom: 0 none;
+          margin-top: -20px;
+
+          a {
+            @extend %orange-btn;
+            flex: 0 0 auto;
+            margin-right: 5px;
+            background-color: $white;
+            color: $main-color;
+            box-shadow: 4px -15px 11px -3px rgba(230, 230, 230, 0.8);
+            border-radius: $br-8;
+            min-width: 160px;
+
+            &:hover {
+              border: 0 none;
+              background-color: $orange;
+              color: $white;
+              transition: 0.3s ease all;
+            }
+
+            &.active {
+              background-color: $orange;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      p {
+        color: #646464;
+        padding: 0 15px;
+        margin: 30px 0;
+      }
+
+      .for-rent-form {
+        display: flex;
+        flex-wrap: wrap;
+
+        [class*="col-"] {
+          margin-bottom: 30px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          //a {
+          //  &.orange-btn {
+          //    padding: 12px 28px;
+          //  }
+          //}
+          .form-control {
+            padding: 7px 20px;
+            height: 50px;
+            border-radius: 0;
+            color: #646464;
+            border: 1px solid #fff;
+            box-shadow: $card-boxshadow;
+          }
+        }
+      }
+    }
+  }
+
+  .properties-list {
+    position: relative;
+    display: none;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: url("/images/woman-in-sofa.png") 2% 0 no-repeat;
+      background-size: 360px auto;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background: url("/images/woman-in-sofa2.png") right bottom no-repeat;
+      background-size: 360px auto;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    margin-top: 100px;
+
+    .row {
+      justify-content: center;
+
+      .title {
+        margin-bottom: 70px;
+      }
+
+      .properties-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: $container-small - 90px;
+        width: 100%;
+
+        .box {
+          border-radius: 8px;
+          border: 0 none;
+          max-width: 332px;
+          height: 291px;
+          width: 100%;
+          margin-bottom: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 15px;
+
+          .property-details {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+              color: $main-color;
+              //font-size: 14px;
+              //font-family: $font-bold;
+              //&.orange-btn {
+              //  color: $white;
+              //  font-size: 13px;
+              //  font-family: $body-font;
+              //}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .why-best {
+    justify-content: space-between;
+    max-width: $container-small - 150px;
+    margin: 0 auto;
+    padding-top: 70px;
+    display: none;
+
+    p {
+      color: #646464;
+      margin: 20px 0;
+    }
+
+    .card {
+      max-width: 49%;
+      width: 100%;
+      padding: 25px 25px 100px 25px;
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 17px;
+        font-family: $font-bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .service-plan {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: none;
+
+    p {
+      color: #646464;
+      margin: 20px 0;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      text-align: center;
+      padding: 30px 30px 60px;
+      margin-bottom: 20px;
+
+      .plan-block {
+        max-width: 33.33%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  margin-top: -80px;
+  //background: url("/images/footer-bg.png") no-repeat;
+  //padding: 500px 0;
+  .sofa-man {
+    position: absolute;
+    top: -75px;
+    left: 35px;
+    max-width: 640px;
+    @media #{$laptop} {
+      max-width: 440px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .footer-bg {
+    max-width: 100%;
+    width: auto;
+    position: absolute;
+    top: -200px;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+  }
+
+  .contact-details {
+    padding: 250px 25px 0 100px;
+    color: $white;
+    @media #{$laptop} {
+      padding: 200px 25px 0 100px;
+    }
+
+    h3 {
+      font-family: $font-bold;
+      font-size: 25px;
+      letter-spacing: 1px;
+      @media #{$laptop} {
+        font-size: 20px;
+      }
+    }
+
+    ul li {
+      font-family: $font-bold;
+      font-size: 25px;
+      letter-spacing: 1px;
+      @media #{$laptop} {
+        font-size: 20px;
+      }
+    }
+
+    .ftr-logo {
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}
